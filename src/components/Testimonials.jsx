@@ -2,7 +2,8 @@ import { TESTIMONIALS } from '../data';
 
 function Stars({ rating }) {
   return (
-    <p className="stars" aria-label={`Rated ${rating} out of 5`}>
+    <p className="stars">
+      <span className="visually-hidden">Rated {rating} out of 5</span>
       <span aria-hidden="true">{'★'.repeat(rating)}{'☆'.repeat(5 - rating)}</span>
     </p>
   );

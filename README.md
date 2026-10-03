@@ -34,7 +34,7 @@ React 19 · React Router 7 · Vite · Vitest · React Testing Library · plain C
 
 ## Getting started
 
-Requirements: [Node.js](https://nodejs.org/) 20 or later and npm.
+Requirements: [Node.js](https://nodejs.org/) 22.12 or later (required by Vite 8 / Vitest 5) and npm.
 
 ```bash
 git clone <this-repo-url>
@@ -57,7 +57,7 @@ npm run dev        # start the dev server at http://localhost:5173
 npm test
 ```
 
-There are 64 tests across 8 files in `src/__tests__/`:
+There are 65 tests across 8 files in `src/__tests__/`:
 
 | File | What it covers |
 | ---- | -------------- |
@@ -65,7 +65,7 @@ There are 64 tests across 8 files in `src/__tests__/`:
 | `BookingForm.test.jsx` | labels, HTML5 attributes, dispatch on date change, disabled/enabled submit, submitted data, error messages and ARIA state |
 | `BookingPage.test.jsx` | end-to-end booking flow: times update, confirmation and saving, API rejection |
 | `validation.test.js` | every validation rule and edge case |
-| `App.test.jsx` | landmarks, alt text, skip link, navigation, mobile menu, 404 and direct `/confirmed` visit |
+| `App.test.jsx` | landmarks, alt text, skip link, navigation and current-page link, mobile menu, 404 and direct `/confirmed` visit |
 | `api.test.js`, `date.test.js`, `storage.test.js` | API mock, time-zone-safe date parsing, and `localStorage` failure handling |
 
 ## Project structure

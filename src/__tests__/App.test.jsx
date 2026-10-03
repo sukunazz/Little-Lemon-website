@@ -58,6 +58,13 @@ describe('App', () => {
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
   });
 
+  it('marks only the home link as current on the home page', () => {
+    renderAt('/');
+    const nav = screen.getByRole('navigation', { name: 'Main' });
+    const current = within(nav).getAllByRole('link').filter((a) => a.getAttribute('aria-current') === 'page');
+    expect(current.map((a) => a.textContent)).toEqual(['Home']);
+  });
+
   it('marks the current page in the main navigation', () => {
     renderAt('/booking');
     const nav = screen.getByRole('navigation', { name: 'Main' });

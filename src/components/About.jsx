@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section id="about" className="about container" aria-labelledby="about-heading">
+    <section id="about" className="about container" aria-label="About Little Lemon">
       <div className="about__text">
         <h2 id="about-heading" className="display-title display-title--dark">Little Lemon</h2>
         <p className="subtitle subtitle--dark">Chicago</p>

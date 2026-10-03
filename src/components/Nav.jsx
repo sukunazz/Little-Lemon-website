@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { NAV_LINKS } from '../data';
 
 /**
@@ -11,10 +11,16 @@ function Nav({ id, label = 'Main', className = '', onNavigate }) {
       <ul>
         {NAV_LINKS.map(({ to, label: text }) => (
           <li key={to}>
-            {/* Only the plain routes should get the "active" state; hash links point into the home page. */}
-            <NavLink to={to} end onClick={onNavigate} className={({ isActive }) => (isActive && !to.includes('#') ? 'active' : undefined)}>
-              {text}
-            </NavLink>
+            {/* Section links (/#about) point into the home page, so they must not get aria-current="page". */}
+            {to.includes('#') ? (
+              <Link to={to} onClick={onNavigate}>
+                {text}
+              </Link>
+            ) : (
+              <NavLink to={to} end onClick={onNavigate}>
+                {text}
+              </NavLink>
+            )}
           </li>
         ))}
       </ul>
